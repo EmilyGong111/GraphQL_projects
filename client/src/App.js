@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import Home from "./pages/Home";
+import NotFound from "./pages/NotFound.jsx";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import {
   BrowserRouter as Router,
@@ -40,6 +41,7 @@ function App() {
           <div className="container">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
         </Router>
