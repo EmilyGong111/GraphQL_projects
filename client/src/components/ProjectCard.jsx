@@ -15,6 +15,9 @@ export default function ProjectCard({project}) {
           <p className="small">
             Status: <strong>{project.status}</strong>
           </p>
+          <p className="small">
+            Client Name: <strong>{project.client.name}</strong>
+          </p>
         </div>
       </div>
     </div>

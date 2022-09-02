@@ -2,6 +2,7 @@ import { useState } from "react";
 import { UPDATE_PROJECT } from "../mutations/projectMutations";
 import { GET_PROJECT } from "../queries/projectQuery";
 import { useMutation } from "@apollo/client";
+import { FaEdit } from "react-icons/fa";
 
 export default function UpdateProject({project}) {
   const [name, setName] = useState(project.name);
@@ -38,7 +39,13 @@ export default function UpdateProject({project}) {
 
   return (
     <div className="mt-5">
-      <h5>Update Project</h5>
+      <div className="d-flex gap-2 align-items-start">
+        <h5>Update Project</h5>
+        <div type="button" data-bs-toggle="collapse" data-bs-target="#collapseUpdateForm" aria-expanded="false" aria-controls="collapseExample">
+          <FaEdit className="icon text-primary"/>
+        </div>
+      </div>
+      <div className="collapse p-3" id="collapseUpdateForm">
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label className="form-label" htmlFor="name">Name</label>
@@ -75,11 +82,12 @@ export default function UpdateProject({project}) {
           </div>
           <button 
             type="submit" 
-            className="btn btn-primary"
+            className="btn btn-secondary"
             >
               Submit
           </button>
         </form>
+      </div>
     </div>
   )
 }

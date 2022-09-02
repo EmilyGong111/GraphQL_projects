@@ -29,7 +29,9 @@ code {
   background-color: #df3ca6 !important;
   border: none;
 }
-
+.text-primary {
+  color: #df3ca6 !important;
+}
 .btn-primary:hover {
   background-color: #df3ca6;
   opacity: 0.9;

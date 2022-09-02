@@ -5,6 +5,7 @@ import Spinner from "../components/Spinner";
 import ClientInfo from "../components/ClientInfo";
 import DeleteProject from "../components/DeleteProject";
 import UpdateProject from "../components/UpdateProject";
+import { FaArrowLeft } from "react-icons/fa";
 
 export default function Project() {
   const { id } = useParams();
@@ -20,7 +21,10 @@ export default function Project() {
     <>
       {!loading && !error && (
       <div className="mx-auto w-75 card p-5">
-        <Link to="/" className="btn btn-primary btn-sm w-25 d-inline ms-auto">Back</Link>
+        <Link to="/" className="btn btn-primary btn-sm w-25 d-inline ms-auto">
+          <FaArrowLeft />
+          Back
+        </Link>
         <h1>{project.name}</h1>
         <p>{project.description}</p>
         <h5 className='mt-3'>Project Status</h5>
@@ -29,7 +33,6 @@ export default function Project() {
         <ClientInfo client={project.client} />
         <hr />
         <UpdateProject project={project} />
-        <hr />
         <DeleteProject projectId={project.id}/>
       </div>
       )}
